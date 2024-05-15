@@ -1,0 +1,63 @@
+@startuml restoran.puml
+
+start
+
+:Menampilkan Menu Utama;
+:1. Makanan;
+:2. Minuman;
+:3. Exit;
+
+if (Pilihan == Makanan?) then (ya)
+  :Tampilkan Daftar Makanan;
+  :1. Pecel Lele;
+  :2. Nasi Goreng;
+  :3. Kembali;
+  
+  if (Pilihan Makanan == Pecel Lele?) then (ya)
+    :Masukkan Jumlah Pecel Lele;
+    :Hitung Total Harga;
+    :Cetak Total Harga;
+    :Kembali ke Menu Utama;
+  else (tidak)
+    if (Pilihan Makanan == Nasi Goreng?) then (ya)
+      :Masukkan Jumlah Nasi Goreng;
+      :Hitung Total Harga;
+      :Cetak Total Harga;
+      :Kembali ke Menu Utama;
+    else (tidak)
+      :Kembali ke Menu Utama;
+    endif
+  endif
+else (tidak)
+  if (Pilihan == Minuman?) then (ya)
+    :Tampilkan Daftar Minuman;
+    :1. Es Teh;
+    :2. Jus Jeruk;
+    :3. Kembali;
+    
+    if (Pilihan Minuman == Es Teh?) then (ya)
+      :Masukkan Jumlah Es Teh;
+      :Hitung Total Harga;
+      :Cetak Total Harga;
+      :Kembali ke Menu Utama;
+    else (tidak)
+      if (Pilihan Minuman == Jus Jeruk?) then (ya)
+        :Masukkan Jumlah Jus Jeruk;
+        :Hitung Total Harga;
+        :Cetak Total Harga;
+        :Kembali ke Menu Utama;
+      else (tidak)
+        :Kembali ke Menu Utama;
+      endif
+    endif
+  else (tidak)
+    if (Pilihan == Exit?) then (ya)
+      :Keluar dari Sistem;
+      stop
+    endif
+  endif
+endif
+
+stop
+
+@enduml
