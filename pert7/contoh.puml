@@ -1,0 +1,19 @@
+@startuml
+start
+:Mulai;
+:Menu Makanan dan Minuman;
+if (Pilih Kategori?) then (Makanan)
+  :Tampilkan Menu Makanan dan Harga;
+  :Meminta Input Harga Makanan;
+else (Minuman)
+  :Tampilkan Menu Minuman dan Harga;
+  :Meminta Input Harga Minuman;
+endif
+:Kembali atau Lanjut?;
+if (Kembali?) then
+  :Kembali ke Menu Makanan dan Minuman;
+else
+  :Selesai;
+endif
+stop
+@enduml

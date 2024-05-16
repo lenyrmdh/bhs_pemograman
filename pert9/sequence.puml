@@ -1,0 +1,22 @@
+@startuml pert8
+autonumber "<b> ." 
+actor user
+participant "Menu" as M
+participant "Pilih Menu" as pil
+participant "Aku" as A
+participant "Dia" as D
+participant "Quantity" as qty
+participant "Total" as tot
+participant "Exit" as X
+
+user --> M: Tampilkan Menu Utama
+M --> pil: Pilihan Menu 1 Atau 2, Pilih Aku Atau Dia
+pil --> A: Menampilkan Profile Aku
+A --> qty: Masukkan Jumlah Quantity
+qty --> tot: Print
+M --> tot: Kembali Ke Menu
+pil --> D: Menampilkan Jumlah Quantity
+qty --> tot: print
+tot --> X: Jika Pilihan Exit
+M <-- tot: Kembali Ke Menu
+@enduml

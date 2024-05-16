@@ -1,0 +1,29 @@
+@startuml
+:Mulai;
+:Menu Makanan dan Minuman;
+if (Pilih Kategori?) then
+  :Makanan;
+  :Pilih Makanan;
+  if (Pilih Makanan?) then
+    :Nasi Goreng - Rp15000;
+    :Mie Goreng - Rp13000;
+    :Soto Ayam - Rp18000;
+  endif;
+else
+  :Minuman;
+  :Pilih Minuman;
+  if (Pilih Minuman?) then
+    :Teh - Rp5000;
+    :Kopi - Rp7000;
+    :Jus - Rp10000;
+  endif;
+endif;
+:Hitung Total Harga;
+:Masukkan Jumlah Uang;
+if (Uang Cukup?) then
+  :Berikan Kembalian;
+else
+  :Tampilkan Pesan Uang Tidak Cukup;
+endif;
+:Selesai;
+@enduml
