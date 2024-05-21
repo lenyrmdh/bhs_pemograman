@@ -1,0 +1,55 @@
+@startuml
+start
+:Mulai;
+:Menu Makanan dan Minuman;
+repeat
+  if (Pilih Kategori?) then (Makanan)
+    :Tampilkan Menu Makanan dan Harga;
+    :1. Mie Goreng   - Rp 15,000;
+    :2. Nasi Goreng  - Rp 20,000;
+    :3. Soto Ayam    - Rp 18,000;
+    :Meminta Input Nomor Makanan;
+    if (Input Nomor Makanan == 0?) then (Ya)
+      :Kembali ke Pilih Kategori;
+    else (Tidak)
+      :Tambahkan ke Daftar Pesanan;
+    endif
+  else (Minuman)
+    :Tampilkan Menu Minuman dan Harga;
+    :1. Teh Pucuk   - Rp 10,000;
+    :2. Teh Botol    - Rp 5,000;
+    :3. Teh Kotak    - Rp 8,000;
+    :Meminta Input Nomor Minuman;
+    if (Input Nomor Minuman == 0?) then (Ya)
+      :Kembali ke Pilih Kategori;
+    else (Tidak)
+      :Tambahkan ke Daftar Pesanan;
+    endif
+  endif
+:Kembali atau Lanjut?;
+if (Kembali?) then 
+  :Kembali ke Menu Makanan dan Minuman;
+else
+  break
+endif
+repeat while (Kembali?)
+:Hitung Total Harga;
+:Tampilkan Total Harga;
+:Total Harga: Rp {total_harga};
+:Tampilkan Cara Pembayaran;
+:1. Tunai;
+:2. Kartu Kredit/Debit;
+:3. Transfer Bank;
+:4. E-Wallet (OVO, GoPay, DANA, dll.);
+:Meminta Input Metode Pembayaran;
+if (Pembayaran Berhasil?) then (Ya)
+  :Pembayaran Berhasil;
+  :Tampilkan Bukti Pembayaran;
+else (Tidak)
+  :Pembayaran Gagal;
+  :Silakan Coba Lagi;
+  :Kembali ke Tampilkan Cara Pembayaran;
+endif
+:Selesai;
+stop
+@enduml

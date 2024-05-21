@@ -1,0 +1,49 @@
+@startuml
+!define RECTANGLE class
+skinparam rectangle {
+    BackgroundColor PaleGreen
+    BorderColor DarkGreen
+    FontColor DarkGreen
+}
+
+RECTANGLE MenuItem {
+    +name: string
+    +price: double
+}
+
+RECTANGLE Menu {
+    +displayMenu(): void
+    +calculateTotal(): double
+}
+
+RECTANGLE UserInput {
+    +choice: int
+    +quantity: int
+}
+
+RECTANGLE Calculation {
+    +subtotal: double
+    +tax: double
+    +total: double
+}
+
+rectangle Program {
+    displayMenu()
+    repeat
+      userInput()
+      if (choice == 0) then (yes)
+        break
+      else (no)
+        addToTotalPrices()
+      endif
+    repeat while (choice != 0)
+    calculateSubtotal()
+    calculateTax()
+    displayTotal()
+}
+
+MenuItem -left- Menu
+UserInput -down- Program
+Calculation -down- Program
+
+@enduml

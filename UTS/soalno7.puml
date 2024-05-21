@@ -1,0 +1,24 @@
+@startuml
+start
+:menu();
+:Masukkan angka pertama;
+:Masukkan angka kedua;
+if (Pilih operasi) then (1)
+    :tambah();
+    :Hasil = Angka1 + Angka2;
+elseif (2)
+    :kurang();
+    :Hasil = Angka1 - Angka2;
+elseif (3)
+    :kali();
+    :Hasil = Angka1 * Angka2;
+elseif (4)
+    :bagi();
+    :Hasil = Angka1 / Angka2;
+else (Tidak valid)
+    :Operasi tidak valid, silakan coba lagi;
+    stop
+endif
+:Menampilkan hasil;
+stop
+@enduml
