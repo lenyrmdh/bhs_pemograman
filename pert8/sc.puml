@@ -1,0 +1,44 @@
+@startuml
+
+start
+
+:Meminta izin lokasi;
+if (Izin diberikan?) then (ya)
+  :Mendapatkan lokasi;
+  if (Lokasi berhasil didapatkan?) then (ya)
+    :Memuat data toko Starbucks;
+    if (Data berhasil dimuat?) then (ya)
+      :Ambil data toko Starbucks;
+      if (Data berhasil diambil?) then (ya)
+        :Tampilkan daftar toko Starbucks;
+        if (Pilih toko) then (ya)
+          :Tampilkan menu Starbucks;
+          if (Pesan minuman) then (ya)
+            :Bayar;
+            if (Pembayaran berhasil?) then (ya)
+              :Pesanan selesai;
+            else (tidak)
+              :Batal pesanan;
+            endif
+          else (tidak)
+            :Tidak jadi pesan;
+          endif
+        else (tidak)
+          :Batal pesanan;
+        endif
+      else (tidak)
+        :Tampilkan pesan kesalahan;
+      endif
+    else (tidak)
+      :Tampilkan pesan kesalahan;
+    endif
+  else (tidak)
+    :Tampilkan pesan kesalahan;
+  endif
+else (tidak)
+  :Tampilkan pesan kesalahan;
+endif
+
+stop
+
+@enduml
