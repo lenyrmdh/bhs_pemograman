@@ -130,23 +130,10 @@ int main() {
         // Melakukan aksi sesuai dengan pilihan
         switch (choice) {
             case 1:
-                // Meminta izin lokasi
-                if (!requestLocationPermission()) {
-                    cout << "Error: Izin lokasi ditolak" << endl;
-                    cout << "Maaf, untuk dapat menemukan toko Starbucks terdekat, kami memerlukan izin lokasi Anda." << endl;
-                }
-                else {
-                    // Mendapatkan lokasi jika izin diberikan
-                    if (getLocation()) {
-                        cout << "Lokasi berhasil didapatkan. Temukan toko Starbucks terdekat!" << endl;
-                        locationFound = true;
-                    }
-                    else {
-                        cout << "Error: Gagal mendapatkan lokasi" << endl;
-                        cout << "Maaf, terjadi kesalahan saat mencoba mendapatkan lokasi Anda." << endl;
-                    }
-                }
-                break;
+                // Menampilkan lokasi tanpa meminta izin
+                     cout << "Lokasi: Starbucks terdekat di Sency" << endl;
+                     locationFound = true;
+                 break;
             case 2:
                 // Menampilkan informasi toko di lokasi "Sency"
                 if (locationFound) {
